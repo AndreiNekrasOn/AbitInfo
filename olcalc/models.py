@@ -34,7 +34,7 @@ class Faculty(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title= models.CharField(max_length = 200)
     passing_score= models.PositiveSmallIntegerField()
-    olymps: models.ForeignKey('Olymp', on_delete=models.CASCADE)
+    olymps= models.ForeignKey('Olymp', on_delete=models.CASCADE)
     specialities= models.ForeignKey('Speciality', on_delete=models.CASCADE)
     def __str__(self):
         return self.title

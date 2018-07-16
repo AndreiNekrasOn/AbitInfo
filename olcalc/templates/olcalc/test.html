@@ -1,0 +1,56 @@
+{% extends 'olcalc/base.html' %}
+
+{% block title %}
+    <title>AbitInfo | Дичь</title>
+{% endblock %}
+
+{% block navbar_buttons%}
+    <li class="nav-item">
+        <a class="nav-link" href='/'>Главная</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Статьи</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#">О нас</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="#">Тестовая</a>
+    </li>
+{% endblock %}
+    
+{% block content %}
+    <div class="jumbotron d-none d-sm-block">
+        <div class="container">
+            <h1 class="display-4">Здесь тестирую всякую муть</h1>
+            <p class="lead">Где можно все сломать? Здесь!</p>
+        </div>
+    </div>
+
+    <main role="main" class="container" style="margin-top: 50px;">
+        
+        <form action="/search/" method="get">
+            <input type="text" name="q">
+            <input type="submit" value="Search">
+        </form>
+        
+        
+        <p>You searched for: <strong>{{ query }}</strong></p>
+        
+           
+        {% if olymps %}
+            <p>This olymp exists</p>
+            <ul>
+                {% for book in books %}
+                <li>{{ book.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+
+        {% endif %}
+        
+    </main>
+
+{% endblock %}
