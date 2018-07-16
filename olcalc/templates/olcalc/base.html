@@ -1,14 +1,16 @@
-{%load staticfiles%}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.ico">
-    <title>AbitInfo | Все для поступления</title>
     
+    {% block title %}
+    {% endblock %}    
+    
+    {%load staticfiles%}
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">
     
     <!-- Bootstrap CSS -->
@@ -38,16 +40,9 @@
                     </button>
                     <div class="navbar-collapse collapse" id="header-links">
                         <ul class="navbar-nav m-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Главная</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Статьи</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">О проекте</a>
-                            </li>
+                           
+                            {% block navbar_buttons %}                        
+                            {% endblock %}
 
                         </ul>
                         <form class="form-inline">

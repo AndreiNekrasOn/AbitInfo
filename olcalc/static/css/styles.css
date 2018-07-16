@@ -1,11 +1,8 @@
 body {
     background: linear-gradient(lightgray, lightgray, white);
     background-repeat: no-repeat;
-    
     height: 100vh;
-    
 }
-
 
 .fa {
     margin: 20px;
@@ -25,7 +22,5 @@ body {
 .jumbotron {
     padding: 0px;
     margin: 0px;
-    
+    background-color: pink!important;
 }
-
-.jumbotron{background-color: pink!important;}
