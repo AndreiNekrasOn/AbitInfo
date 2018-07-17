@@ -50,6 +50,7 @@
         
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
+            
             <!--
             {% for us in univols.all %}
                 {{us}}
