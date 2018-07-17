@@ -30,27 +30,37 @@
     </div>
 
     <main role="main" class="container" style="margin-top: 50px;">
+
+        
         
         <form action="/search/" method="get">
-            <input type="text" name="q">
-            <input type="submit" value="Search">
+            <div class="form-group">
+                <div class="form-group form-inline">
+                    <select class="form-control" id="olymp_name" name="olymp_name" style="width: 300px;">
+                       <option value="" disabled selected>Название олимпиады</option>
+                        {% for olymp in olymps %}
+                            <option>{{olymp}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" value="Search">Узнать льготы</button>
         </form>
         
-        
-        <p>You searched for: <strong>{{ query }}</strong></p>
-        
-           
-        {% if olymps %}
-            <p>This olymp exists</p>
-            <ul>
-                {% for book in books %}
-                <li>{{ book.title }}</li>
-                {% endfor %}
-            </ul>
+        {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
+            <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
+            <!--
+            {% for us in univols.all %}
+                {{us}}
+                <p>hi</p>
+            {% endfor %}
+            -->
+                
         {% else %}
-
+            <!--<p>Такой олимпиады нет в списке =(. Сообщите разработчикам, если встретили ошибку</p>-->
         {% endif %}
-        
+
     </main>
 
 {% endblock %}
