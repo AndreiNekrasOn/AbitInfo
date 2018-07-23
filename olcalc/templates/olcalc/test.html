@@ -24,7 +24,7 @@
 {% block content %}
     <div class="jumbotron d-none d-sm-block">
         <div class="container">
-            <h1 class="display-4">Здесь тестирую всякую муть</h1>
+            <h1 class="display-4">Здесь тестирую всякое</h1>
             <p class="lead">Где можно все сломать? Здесь!</p>
         </div>
     </div>
@@ -47,29 +47,54 @@
 
             <button type="submit" class="btn btn-dark" value="Search">Узнать льготы</button>
         </form>
-        <!--
+        
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
-           <!--
+           
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
-            {% for u in univers %}
-                {% if olymp_name in u.olymps %}
+            <!--{% for u in univers %}
+                {% if olymp_name %}
                     {{u.title}}
                 {% else %}
                     <p>WOW! MISTAKE =(</p>
-                    {{u.olymps}}
+        
                 {% endif %}
                 
-            {% endfor %}
-           
+            {% endfor %}-->
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>ВУЗ</th>
+                    <th>Факультет</th>
+                    <th>Специальность</th>
+                    <th>Проходной балл</th>
+                    <th>Военная кафедра</th>
+                    
+                </tr>
+                {% for univer in univers%}
+                    <tr>
+                        <td>{{univer.rating}}</td>
+                        <td>{{univer.title}}</td>
+                        
+                        <td>{{univer.f_title}}</td>
+                        <td>{{univer.s_title}}</td>
+                        <td>{{univer.passing_score}}</td>
+                        <td>
+                            {% if univer.army_cafedra %}
+                                <p>Есть</p>
+                            {% else %}
+                                <p>Нет</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+
+
+                {% endfor%}
+            </table>
+            
         {% endif %}
-        -->
         
-        
-        
-        
-        <p><strong>Thestig</strong></p>
        
-        {{k}}
+
     </main>
 
 {% endblock %}

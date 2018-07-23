@@ -12,7 +12,7 @@ def index(request):
 
 def test(request):
     subjects = Subject.objects.order_by('title')
-    olymps = Olymp.objects.order_by('rating')
+    olymps = Olymp.objects.order_by('title')
     return render(request, 'olcalc/test.html', {'subjects': subjects, 'olymps': olymps})
 
 def search(request):
@@ -20,20 +20,12 @@ def search(request):
     olymps = Olymp.objects.order_by('title')
     if 'olymp_name' in request.GET and request.GET['olymp_name']:
         olymp_name = request.GET['olymp_name']
-        qUnivers = Univer_plus.objects.order_by('title')
-        univer=[]
-        oRange = []
-        num_of_univers=[]
-        i = 0
-        for u in qUnivers:
-            univer.append(u)
-            num_of_univers.append(i)
-            i+=1
-        k = univer[0].olymps.all().query
+        univers=Univer_plus.objects.order_by('rating', 'title').filter(olymps__title=olymp_name)
+        qUnivers=[]
         
-        return render_to_response('olcalc/test.html', {'olymp_name': olymp_name, 'subjects': subjects, 'olymps': olymps,
-                    'univer': univer, 'num_of_univers': num_of_univers ,
-                    'k': k
-          })
+        
+        content = {'olymp_name': olymp_name, 'subjects': subjects, 'univers': univers, 'olymps': olymps}
+        
+        return render_to_response('olcalc/test.html', content)
     else:
         return render(request, 'olcalc/test.html', {'subjects': subjects, 'olymps': olymps})

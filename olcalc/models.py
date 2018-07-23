@@ -4,13 +4,12 @@ from django.db import models
 class Univer_plus(models.Model):
     title= models.CharField(max_length = 200)
     f_title= models.CharField(max_length = 200)
-    s_title= models.CharField(max_length = 200)
+    s_title= models.CharField(max_length = 200, null=True,)
     exams = models.ManyToManyField('Subject')
     passing_score= models.PositiveSmallIntegerField()
-    olymps= models.ManyToManyField('Olymp')
+    olymps= models.ManyToManyField('Olymp', null = True)
     rating = models.PositiveSmallIntegerField()
-    army_cafedra= models.BooleanField()
-    
+    army_cafedra= models.BooleanField() 
     def __str__(self):
         return self.title
     
