@@ -47,21 +47,29 @@
 
             <button type="submit" class="btn btn-dark" value="Search">Узнать льготы</button>
         </form>
-        
+        <!--
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
+           <!--
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
-            
-            <!--
-            {% for us in univols.all %}
-                {{us}}
-                <p>hi</p>
-            {% endfor %}
-            -->
+            {% for u in univers %}
+                {% if olymp_name in u.olymps %}
+                    {{u.title}}
+                {% else %}
+                    <p>WOW! MISTAKE =(</p>
+                    {{u.olymps}}
+                {% endif %}
                 
-        {% else %}
-            <!--<p>Такой олимпиады нет в списке =(. Сообщите разработчикам, если встретили ошибку</p>-->
+            {% endfor %}
+           
         {% endif %}
-
+        -->
+        
+        
+        
+        
+        <p><strong>Thestig</strong></p>
+       
+        {{k}}
     </main>
 
 {% endblock %}
