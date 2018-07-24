@@ -51,15 +51,6 @@
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
            
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
-            <!--{% for u in univers %}
-                {% if olymp_name %}
-                    {{u.title}}
-                {% else %}
-                    <p>WOW! MISTAKE =(</p>
-        
-                {% endif %}
-                
-            {% endfor %}-->
             <div class="table-responsive">
                 <table class="table" >
                     <tr class="bg-dark" style="color: aliceblue">

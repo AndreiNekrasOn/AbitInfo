@@ -7,7 +7,7 @@ class Univer_plus(models.Model):
     s_title= models.CharField(max_length = 200, null=True,)
     exams = models.ManyToManyField('Subject')
     passing_score= models.PositiveSmallIntegerField()
-    olymps= models.ManyToManyField('Olymp', null = True)
+    olymps= models.ManyToManyField('Olymp', blank=True)
     rating = models.PositiveSmallIntegerField()
     privilege = models.CharField(max_length = 200, null=True,)
     army_cafedra= models.BooleanField() 

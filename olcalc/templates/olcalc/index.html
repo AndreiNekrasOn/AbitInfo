@@ -15,10 +15,7 @@
     <li class="nav-item">
         <a class="nav-link" href="#">О нас</a>
     </li>
-    
-    <li class="nav-item">
-        <a class="nav-link" href="/test/">Тестовая</a>
-    </li>
+
 {% endblock %}
     
 {% block content %}
@@ -29,64 +26,69 @@
             <p class="lead">Мы поможем найти ответ!</p>
         </div>
     </div>
+    
 
-    <main role="main" class="container" style="margin-top: 100px;">
-        <p class="lead">Просто введите название олимпиады и ее профиль и получите список льгот во все ВУЗы!</p>
-        <p class="lead">Вы также не можете выбрать необходимые фильры, чтобы отображать только интересующие вас ВУЗы.</p>
-        <form action="" method="get">
+    <main role="main" class="container" style="margin-top: 50px;">
+
+        
+        
+        <form action="/search/" method="get">
             <div class="form-group">
                 <div class="form-group form-inline">
-                    <!--<input type="text" class="form-control" id="olymp-1" placeholder="Название" name="olymp-name-1" list="ol-list" autocomplete="off">-->
-                    <select class="form-control" id="olymp-namet-1" name="olymp-name-1" style="width: 300px;">
+                    <select class="form-control" id="olymp_name" name="olymp_name" style="width: 300px;">
                        <option value="" disabled selected>Название олимпиады</option>
                         {% for olymp in olymps %}
                             <option>{{olymp}}</option>
                         {% endfor %}
                     </select>
-                    
-                    <select class="form-control" id="olymp-subject-1" name="olymp-sub-1">
-                        <option value="" selected disabled>Предмет</option>
-                        {% for subject in subjects %}
-                            <option>{{subject}}</option>
-                        {% endfor %}
-                    </select>
                 </div>
-            <!--<button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#second-olymp" onclick="style.display='none'">Добавить олимпиаду</button>
-
-                <div id="second-olymp" class="collapse">
-                <div class="form-group form-inline">
-                --<input type="text" class="form-control" id="olymp-1" placeholder="Название" name="olymp-name-1" list="ol-list" autocomplete="off">
-                --
-                <select class="form-control" id="olymp-namet-1" name="olymp-name-1">
-                {% for olymp in olymps %}
-                <option>{{olymp}}</option>
-                {% endfor %}
-                </select>
-
-                <select class="form-control" id="olymp-subject-1" name="olymp-sub-1">
-                <option value="" selected disabled>Предмет</option>
-                {% for subject in subjects %}
-                <option>{{subject}}</option>
-                {% endfor %}
-                </select>
-                </div>
-                </div>
-            -->
             </div>
 
-            <button type="submit" class="btn btn-dark" value="Input">Узнать льготы</button>
-            
-            <!--List of olympiads
-            <datalist id="ol-list">
-                <option value="Бельчонок">
-                <option value="Звезда">
-                <option value="Межвед">
-                <option value="Физтех">
-            </datalist>
-            -->
+            <button type="submit" class="btn btn-dark" value="Search">Узнать льготы</button>
         </form>
         
+        {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
+           
+            <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
+            <div class="table-responsive">
+                <table class="table" >
+                    <tr class="bg-dark" style="color: aliceblue">
+                        <th>#</th>
+                        <th>ВУЗ</th>
+                        <th>Факультет</th>
+                        <th>Специальность</th>
+                        <th>Льгота</th>
+                        <th>Проходной балл</th>
+                        <th>Военная кафедра</th>
+
+                    </tr>
+                    {% for univer in univers%}
+                        <tr>
+                            <td>{{univer.rating}}</td>
+                            <td>{{univer.title}}</td>
+                            <td>{{univer.f_title}}</td>
+                            <td>{{univer.s_title}}</td>
+                            <td>{{univer.privilege}}</td>
+                            <td>{{univer.passing_score}}</td>
+
+                            <td>
+                                {% if univer.army_cafedra %}
+                                    <p>Есть</p>
+                                {% else %}
+                                    <p>Нет</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+
+
+                    {% endfor%}
+                </table>
+            </div>
+        {% endif %}
         
+       
+
     </main>
+    
 
 {% endblock %}
