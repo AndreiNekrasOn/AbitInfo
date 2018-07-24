@@ -60,37 +60,40 @@
                 {% endif %}
                 
             {% endfor %}-->
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th>ВУЗ</th>
-                    <th>Факультет</th>
-                    <th>Специальность</th>
-                    <th>Проходной балл</th>
-                    <th>Военная кафедра</th>
-                    
-                </tr>
-                {% for univer in univers%}
-                    <tr>
-                        <td>{{univer.rating}}</td>
-                        <td>{{univer.title}}</td>
-                        
-                        <td>{{univer.f_title}}</td>
-                        <td>{{univer.s_title}}</td>
-                        <td>{{univer.passing_score}}</td>
-                        <td>
-                            {% if univer.army_cafedra %}
-                                <p>Есть</p>
-                            {% else %}
-                                <p>Нет</p>
-                            {% endif %}
-                        </td>
+            <div class="table-responsive">
+                <table class="table" >
+                    <tr class="bg-dark" style="color: aliceblue">
+                        <th>#</th>
+                        <th>ВУЗ</th>
+                        <th>Факультет</th>
+                        <th>Специальность</th>
+                        <th>Льгота</th>
+                        <th>Проходной балл</th>
+                        <th>Военная кафедра</th>
+
                     </tr>
+                    {% for univer in univers%}
+                        <tr>
+                            <td>{{univer.rating}}</td>
+                            <td>{{univer.title}}</td>
+                            <td>{{univer.f_title}}</td>
+                            <td>{{univer.s_title}}</td>
+                            <td>{{univer.privilege}}</td>
+                            <td>{{univer.passing_score}}</td>
+
+                            <td>
+                                {% if univer.army_cafedra %}
+                                    <p>Есть</p>
+                                {% else %}
+                                    <p>Нет</p>
+                                {% endif %}
+                            </td>
+                        </tr>
 
 
-                {% endfor%}
-            </table>
-            
+                    {% endfor%}
+                </table>
+            </div>
         {% endif %}
         
        
