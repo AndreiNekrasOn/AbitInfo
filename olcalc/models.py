@@ -26,3 +26,16 @@ class Olymp(models.Model):
     def __str__(self):
         return self.title
 
+class testOlymp(models.Model):
+    title= models.CharField(max_length = 200)
+    profile= models.CharField(max_length = 200)
+    subject= models.ManyToManyField('testSubject')
+    level= models.PositiveSmallIntegerField()
+    def __str__(self):
+        return self.title
+
+
+class testSubject(models.Model):
+    title= models.CharField(max_length = 200)
+    def __str__(self):
+        return self.title
