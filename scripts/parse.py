@@ -2,35 +2,49 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "http://rsr-olymp.ru/"
-# subjects =['литература', 'обществознание', 'история', 'информатика', 'обществознание', 'экономика', 'нанотехнологии',
-#            'филология', 'медицина', 'химия', 'математика', 'физика', 'биология', 'право', 'география', 'английский язык',
-#            'астрономия', 'естественные науки',]
+subjects = ["Русский язык", "Математика", "Физика", "Химия", "История", "Обществознание", "Информатика",
+            "Биология", "География", "Иностранный язык", "Русский язык", "Литература"]
 
+url = "http://rsr-olymp.ru/"
 page_code = requests.get(url)
 soup = BeautifulSoup(page_code.content, 'html.parser')
+
 table = soup.find_all('table')[1]
 tds = table.find_all('td')[5:]
 test_Name = ''
 test_Profile = ''
-test_Subject = ''
 test_Level = ''
 
-first_time_tr = True
-counter = 0
+except_number = True
+mode = 0
+row_value = 0
 
 for td in tds:
-    if td.has_attr:
-        first_time_tr = False
+    if td.has_attr and except_number is True:
+        except_number = False
     else:
-        if td.find('a'):
-            counter = 0
-            test_Name += td.get_text() + ' '  # maybe iterate next trs rowspan value times
-        test_Profile += td.get_text() + ' '  # need to change modes, e.g. : mode 1 -> get_text in Profile, etc..
-        test_Subject += td.get_text() + ' '
+        if row_value > 0:
+            if mode == 0:
+                test_Profile += td.get_text() + '\n'
+                mode += 1
+            elif mode == 1:
+                mode += 1
+            else:
+                test_Level += td.get_text() + '\n'
+                row_value -= 1
+                mode = 0
+                if row_value == 0:
+                    except_number = True
 
-print(counter)
-# trs = soup.find_all("tr")
-# for tr in trs:
-#     td =
-#     print('\n')
+        else:
+            test_Name += td.get_text() + '\n'
+            if td.get('rowspan'):
+                row_value = int(td.get('rowspan'))
+            else:
+                row_value = 1
+
+print(test_Name)
+print('\n\n\n')
+print(test_Profile)
+print('\n\n\n')
+print(test_Level)
