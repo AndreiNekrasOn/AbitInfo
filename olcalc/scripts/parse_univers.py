@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 url_base = "https://propostuplenie.ru/university/vuzy-moskvy/"
-for page_number in range(1, 3):
+for page_number in range(1, 120):
     payload = {'Region[]': 15, 'UniverPager': page_number}
     page_code = requests.get(url_base, params=payload)
     soup = BeautifulSoup(page_code.content, 'html.parser')
