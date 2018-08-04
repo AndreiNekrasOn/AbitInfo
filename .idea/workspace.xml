@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c70e514-b476-49b4-bbb5-7d2edcc0d8cc" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/olcalc/migrations/0003_auto_20180804_1608.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/olcalc/scripts/clear_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/olcalc/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/olcalc/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/olcalc/scripts/parse_olymps.py" beforeDir="false" afterPath="$PROJECT_DIR$/olcalc/scripts/parse_olymps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/olcalc/scripts/parse_univers.py" beforeDir="false" afterPath="$PROJECT_DIR$/olcalc/scripts/parse_univers.py" afterDir="false" />
@@ -31,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/olcalc/scripts/clear_db.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -40,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/olcalc/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="422">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -48,8 +51,8 @@
       <file leaf-file-name="parse_univers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/olcalc/scripts/parse_univers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="306">
+              <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -91,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -505,14 +508,14 @@
     <entry file="file://$PROJECT_DIR$/olcalc/scripts/clear_db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/olcalc/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
@@ -528,8 +531,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/olcalc/scripts/parse_univers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="306">
+          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
