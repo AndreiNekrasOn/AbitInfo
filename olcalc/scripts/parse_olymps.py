@@ -23,7 +23,7 @@ for td in tds:
         if row_value > 0:
             if mode == 0:
                 if dub_Name == test_Name[-1]:
-                    test_Name.append(td.get_text())
+                    test_Name.append(dub_Name)
                     dub_Name = test_Name[- 1]
                 test_Profile.append(td.get_text())
                 mode += 1
