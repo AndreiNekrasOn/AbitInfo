@@ -1,4 +1,4 @@
-from olcalc.models import TestOlymp
+from olcalc.models import Olymp
 import requests
 from bs4 import BeautifulSoup
 
@@ -48,4 +48,4 @@ def run():
 
     for i in range (0, len(test_Name)):
         # print(f'{test_Name[i]}  {test_Profile[i]} {test_Level[i]}')
-        TestOlymp.objects.create(title=test_Name[i], profile=test_Profile[i], level=test_Level[i])
+        Olymp.objects.create(title=test_Name[i], subject=test_Profile[i], level=test_Level[i])

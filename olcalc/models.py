@@ -5,7 +5,7 @@ from django.db import models
 class UniverPlus(models.Model):
     title = models.CharField(max_length=200)
     # f_title = models.CharField(max_length=200)
-    s_title = models.CharField(max_length=200, null=True, )
+    speciality = models.CharField(max_length=200, null=True, )
     # exams = models.ManyToManyField('Subject')
     passing_score = models.PositiveSmallIntegerField()
     olymps = models.ManyToManyField('Olymp', blank=True)
@@ -14,7 +14,7 @@ class UniverPlus(models.Model):
     # army_cafedra = models.BooleanField()
 
     def __str__(self):
-        return self.title
+        return self.title + ' ' + self.speciality
 
 
 class Subject(models.Model):
@@ -30,7 +30,7 @@ class Olymp(models.Model):
     level = models.PositiveSmallIntegerField()
 
     def __str__(self):
-        return self.title
+        return self.title + ' ' + self.subject
 
 
 class TestOlymp(models.Model):
