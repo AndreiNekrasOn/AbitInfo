@@ -1,4 +1,4 @@
-from olcalc.models import UniverPlus
+from olcalc.models import Univer_Plus
 import requests
 from bs4 import BeautifulSoup
 
@@ -27,4 +27,4 @@ def run():
                 except ValueError:
                     scoring = 0
 
-                UniverPlus.objects.create(title=univer_name, speciality=spec_name, passing_score=scoring)
+                Univer_Plus.objects.create(title=univer_name, speciality=spec_name, passing_score=scoring)
