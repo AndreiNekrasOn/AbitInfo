@@ -9,8 +9,8 @@ class UniverPlus(models.Model):
     # exams = models.ManyToManyField('Subject')
     passing_score = models.PositiveSmallIntegerField()
     olymps = models.ManyToManyField('Olymp', blank=True)
-    # rating = models.PositiveSmallIntegerField()
-    # privilege = models.CharField(max_length=200, null=True, )
+    rating = models.PositiveSmallIntegerField(null=True)
+    privilege = models.CharField(max_length=200, null=True, )
     # army_cafedra = models.BooleanField()
 
     def __str__(self):
