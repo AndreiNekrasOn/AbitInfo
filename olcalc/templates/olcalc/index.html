@@ -53,25 +53,20 @@
             <div class="table-responsive">
                 <table class="table" >
                     <tr class="bg-dark" style="color: aliceblue">
-                        <th>#</th>
+                        <th>Рейтинг</th>
                         <th>ВУЗ</th>
-
                         <th>Специальность</th>
+                        <th>Проходной балл</th>
                         <th>Льгота</th>
                         <th>Проходной балл</th>
-
-
                     </tr>
                     {% for univer in univers%}
                         <tr>
                             <td>{{univer.rating}}</td>
                             <td>{{univer.title}}</td>
-
                             <td>{{univer.s_title}}</td>
                             <td>{{univer.privilege}}</td>
                             <td>{{univer.passing_score}}</td>
-
-
                         </tr>
 
 
