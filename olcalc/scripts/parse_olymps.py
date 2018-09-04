@@ -8,7 +8,7 @@ def run():
     page_code = requests.get(url)
     soup = BeautifulSoup(page_code.content, 'html.parser')
 
-    table = soup.find('table', class_='mainTableInfo')
+    table = soup.find_all('table', class_='mainTableInfo')[0]
     tds = table.find_all('td')[5:]
     test_Name = []
     test_Profile = []
