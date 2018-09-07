@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def run():
-    url = "http://rsr-olymp.ru/"
+    url = "http://rsr-olymp.ru"
     page_code = requests.get(url)
     soup = BeautifulSoup(page_code.content, 'html.parser')
 
