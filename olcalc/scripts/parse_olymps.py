@@ -9,7 +9,7 @@ def run():
     soup = BeautifulSoup(page_code.content, 'html.parser')
 
     table = soup.find('table', class_='mainTableInfo')
-    tds = table.find_all('td')[5:]
+    tds = table.find_all('td')
     test_Name = []
     test_Profile = []
     test_Level = []
@@ -17,8 +17,12 @@ def run():
     except_number = True
     mode = 0
     row_value = 0
+    counter = 0
 
     for td in tds:
+        if counter < 5:
+            counter += 1
+            continue
         if td.has_attr and except_number is True:
             except_number = False
         else:
@@ -47,5 +51,5 @@ def run():
                     row_value = 1
 
     for i in range (0, len(test_Name)):
-        # print(f'{test_Name[i]}  {test_Profile[i]} {test_Level[i]}')
-        Olymp.objects.create(title=test_Name[i], subject=test_Profile[i], level=test_Level[i])
+         print(f'{test_Name[i]}  {test_Profile[i]} {test_Level[i]}')
+        #Olymp.objects.create(title=test_Name[i], subject=test_Profile[i], level=test_Level[i])
