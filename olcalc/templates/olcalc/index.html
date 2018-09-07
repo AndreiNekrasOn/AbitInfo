@@ -38,7 +38,7 @@
                     <select class="form-control" id="olymp_name" name="olymp_name" style="width: 300px;">
                        <option  value="" disabled selected>Название олимпиады</option>
                         {% for olymp in olymps %}
-                            <option>{{olymp}}</option>
+                            <option>{{olymp.title}} по предмету "{{olymp.subject}}"</option>
                         {% endfor %}
                     </select>
                 </div>
