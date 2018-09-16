@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from .models import Olymp, Univer_plus, Subject
 
