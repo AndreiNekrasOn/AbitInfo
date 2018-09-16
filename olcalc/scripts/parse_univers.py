@@ -1,28 +1,30 @@
-from olcalc.models import Univer_plus
-import requests
-from bs4 import BeautifulSoup
-
+# from olcalc.models import Univer_plus
 
 
 def run():
-    page_code = open('uni.html', encoding='utf-8')
-    soup = BeautifulSoup(page_code, 'html.parser')
+    page_code = open('uni.txt', encoding='utf-8')
+    for line in page_code.readlines():
+        # Univer_plus.objects.create(title=line[0], s_title=line[1], passing_score=line[2])
+        cnt = 0
+        title = ''
+        s_title = ''
+        passing_scor = ''
+        for chr in line:
+            if cnt == 0:
+                if chr == "'" or chr == "[":
+                    continue
+                else:
+                    if chr != "'":
+                        title += chr
+                    else:
+                        cnt = 1
+            if cnt == 1:
+                if chr == "'" or chr == "[":
+                    continue
+                else:
+                    if chr != "'":
+                        title += chr
+                    else:
+                        cnt = 1
 
-    Univer_div = soup.find('div', {'class': 'col-xs-9 ajax-content unwrapped'})
-    Univer_links = Univer_div.find_all('a', {'class': 'title'})
-    for link in Univer_links:
-        url_univer = "https://propostuplenie.ru" + link.get('href')  # + "/#tab-2"
-        page_code = requests.get(url_univer)
-        soup = BeautifulSoup(page_code.content, 'html.parser')
-        univer_name = str(soup.find('span', {'itemprop': 'name'}).get_text()).strip()
-        spec_block = soup.find_all('div', {'class': 'block-spec'})
-        for spec in spec_block:
-            spec_name = str(spec.find('a', {'class': 'block-spec__header'}).get_text()).strip()
-            try:
-                scoring = int(spec.find('span', {'class': 'scoring'}).get_text()[0:3])
-            except AttributeError:
-                scoring = 0
-            except ValueError:
-                scoring = 0
 
-            Univer_plus.objects.create(title=univer_name, s_title=spec_name, passing_score=scoring)

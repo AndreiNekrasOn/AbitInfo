@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 
 
 def run():
-    page_code = open('olymps_to_parse.html', 'r')
+    page_code = open('olymps_to_parse.html', 'r') #, encoding='utf-8')
     soup = BeautifulSoup(page_code, 'html.parser')
+    # print(soup)
     table = soup.find('table', class_='mainTableInfo')
     tds = table.find_all('td')
     test_Name = []
