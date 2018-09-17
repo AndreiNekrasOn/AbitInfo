@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def run():
-    page_code = open('olymps_to_parse.html', 'r')
+    page_code = open('olymps_to_parse.html', 'rb')
     soup = BeautifulSoup(page_code, 'html.parser')
     table = soup.find('table', class_='mainTableInfo')
     tds = table.find_all('td')
