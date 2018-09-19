@@ -1,13 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 url_base = "https://propostuplenie.ru/university/vuzy-moskvy/"
-f = open('uni.txt', 'w', encoding='utf-8')
+f = open('uni.txt', 'w+')
 for page_number in range(1, 19):
     payload = {'Region[]': 15, 'UniverPager': page_number}
     page_code = requests.get(url_base, params=payload)
     soup = BeautifulSoup(page_code.content.decode('utf-8'), 'html.parser')
-    # a = (str(page_code.content.decode('utf-8')))
-    # f.write(a)
     Univer_div = soup.find('div', {'class': 'col-xs-9 ajax-content unwrapped'})
     Univer_links = Univer_div.find_all('a', {'class': 'title'})
     for link in Univer_links:
