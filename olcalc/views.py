@@ -1,19 +1,19 @@
 from django.shortcuts import render
-
-# Create your views here.
-from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from .models import Olymp, Univer_plus, Subject
+
 
 def index(request):
     subjects = Subject.objects.order_by('title')
     olymps = Olymp.objects.order_by('title')
     return render(request, 'olcalc/index.html', {'subjects': subjects, 'olymps': olymps})
 
+
 def test(request):
     subjects = Subject.objects.order_by('title')
     olymps = Olymp.objects.order_by('title')
     return render(request, 'olcalc/test.html', {'subjects': subjects, 'olymps': olymps})
+
 
 def search(request):
     subjects = Subject.objects.order_by('title')
