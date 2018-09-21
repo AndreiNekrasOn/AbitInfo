@@ -1,15 +1,12 @@
 from olcalc.models import Olymp
-import requests
 from bs4 import BeautifulSoup
 
 
 def run():
-    url = "http://rsr-olymp.ru/"
-    page_code = requests.get(url)
-    soup = BeautifulSoup(page_code.content, 'html.parser')
-
-    table = soup.find_all('table')[1]
-    tds = table.find_all('td')[5:]
+    page_code = open('olymps_to_parse.html', 'rb')
+    soup = BeautifulSoup(page_code, 'html.parser')
+    table = soup.find('table', class_='mainTableInfo')
+    tds = table.find_all('td')
     test_Name = []
     test_Profile = []
     test_Level = []
@@ -17,8 +14,12 @@ def run():
     except_number = True
     mode = 0
     row_value = 0
+    counter = 0
 
     for td in tds:
+        if counter < 5:
+            counter += 1
+            continue
         if td.has_attr and except_number is True:
             except_number = False
         else:
@@ -46,6 +47,6 @@ def run():
                 else:
                     row_value = 1
 
-    for i in range (0, len(test_Name)):
-        # print(f'{test_Name[i]}  {test_Profile[i]} {test_Level[i]}')
+    for i in range(0, len(test_Name)):
         Olymp.objects.create(title=test_Name[i], subject=test_Profile[i], level=test_Level[i])
+    page_code.close()

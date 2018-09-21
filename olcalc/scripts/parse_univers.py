@@ -1,30 +1,38 @@
 from olcalc.models import Univer_plus
-import requests
-from bs4 import BeautifulSoup
 
 
 def run():
-    url_base = "https://propostuplenie.ru/university/vuzy-moskvy/"
-    for page_number in range(1, 19):
-        payload = {'Region[]': 15, 'UniverPager': page_number}
-        page_code = requests.get(url_base, params=payload)
-        soup = BeautifulSoup(page_code.content, 'html.parser')
+    page_code = open('uni.txt')
 
-        Univer_div = soup.find('div', {'class': 'col-xs-9 ajax-content unwrapped'})
-        Univer_links = Univer_div.find_all('a', {'class': 'title'})
-        for link in Univer_links:
-            url_univer = "https://propostuplenie.ru" + link.get('href')  # + "/#tab-2"
-            page_code = requests.get(url_univer)
-            soup = BeautifulSoup(page_code.content, 'html.parser')
-            univer_name = str(soup.find('span', {'itemprop': 'name'}).get_text()).strip()
-            spec_block = soup.find_all('div', {'class': 'block-spec'})
-            for spec in spec_block:
-                spec_name = str(spec.find('a', {'class': 'block-spec__header'}).get_text()).strip()
-                try:
-                    scoring = int(spec.find('span', {'class': 'scoring'}).get_text()[0:3])
-                except AttributeError:
-                    scoring = 0
-                except ValueError:
-                    scoring = 0
+    for line in page_code.readlines():
+        univer_name = ''
+        univer_spec = ''
+        univer_ege = ''
+        mode = 0
+        for chr in line:
+            if mode == 0:
+                if chr == ',':
+                    mode = 1
+                    continue
+                univer_name += chr
+            if mode == 1:
+                if '0' <= chr <= '9':
+                    mode = 2
+                    continue
+                if chr == ']':
+                    univer_ege = 0
+                    continue
+                univer_spec += chr
+            if mode == 2:
+                if chr == ']':
+                    mode = 0
+                    continue
+                univer_ege += chr
 
-                Univer_plus.objects.create(title=univer_name, s_title=spec_name, passing_score=scoring)
+        if univer_ege == '':
+            univer_ege = 0
+        try:
+            Univer_plus.objects.create(title=univer_name, s_title=univer_spec, passing_score=univer_ege)
+        except ValueError:  # if fucks than fucks, i'm not smart
+            continue
+    page_code.close()
