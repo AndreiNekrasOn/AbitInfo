@@ -20,8 +20,7 @@ def search(request):
     olymps = Olymp.objects.order_by('title')
     if 'olymp_name' in request.GET and request.GET['olymp_name']:
         olymp_name = request.GET['olymp_name']
-        univers=Univer_plus.objects.order_by('rating', 'title').filter(olymps__title=olymp_name)
-        qUnivers=[]    
+        univers = Univer_plus.objects.order_by('rating', 'title').filter(olymps__title=olymp_name)
         content = {'olymp_name': olymp_name, 'subjects': subjects, 'univers': univers, 'olymps': olymps}
         return render_to_response('olcalc/index.html', content)
     else:
