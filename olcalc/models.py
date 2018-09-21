@@ -1,18 +1,16 @@
 from django.db import models
 
-# Create your models here
-
 
 class Univer_plus(models.Model):
     title = models.CharField(max_length=200)
-    # f_title = models.CharField(max_length=200)
-    s_title = models.CharField(max_length=200, null=True, )
-    # exams = models.ManyToManyField('Subject')
+    f_title = models.CharField(max_length=200, null=True)
+    s_title = models.CharField(max_length=200, null=True,)
+    exams = models.ManyToManyField('Subject', blank=True)
     passing_score = models.PositiveSmallIntegerField()
     olymps = models.ManyToManyField('Olymp', blank=True)
-    rating = models.PositiveSmallIntegerField(default=10000)
-    privilege = models.CharField(max_length=200, default=0 )
-    # army_cafedra = models.BooleanField()
+    rating = models.PositiveSmallIntegerField(null=True)
+    privilege = models.CharField(max_length=200, null=True,)
+    army_cafedra = models.BooleanField(null=True)
 
     def __str__(self):
         return self.title

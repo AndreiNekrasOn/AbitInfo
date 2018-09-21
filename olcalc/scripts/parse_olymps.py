@@ -49,5 +49,5 @@ def run():
 
     for i in range (0, len(test_Name)):
         Olymp.objects.create(title=test_Name[i], subject=test_Profile[i], level=test_Level[i])
-
     page_code.close()
+

@@ -2,7 +2,8 @@ from olcalc.models import Univer_plus
 
 
 def run():
-    page_code = open('uni.txt', encoding='utf-8')
+    page_code = open('uni.txt')
+
     for line in page_code.readlines():
         univer_name = ''
         univer_spec = ''

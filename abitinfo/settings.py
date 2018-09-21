@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions', #installed with pip install, but doesn't work with django 2.1?
+    'django_extensions',  # installed with pip install, but doesn't work with django 2.1?
     'olcalc',
 ]
 
