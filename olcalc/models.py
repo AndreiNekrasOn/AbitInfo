@@ -11,7 +11,7 @@ class Univer_plus(models.Model):
     passing_score = models.PositiveSmallIntegerField()
     olymps = models.ManyToManyField('Olymp', blank=True)
     rating = models.PositiveSmallIntegerField(default=10000)
-    privilege = models.CharField(max_length=200, null=True, )
+    privilege = models.CharField(max_length=200, default="Нет")
     # army_cafedra = models.BooleanField()
 
     def __str__(self):
