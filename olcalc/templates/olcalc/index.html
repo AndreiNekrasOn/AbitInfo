@@ -1,24 +1,16 @@
 {% extends 'olcalc/base.html' %}
-
-{% block title %}
-    <title>AbitInfo | Олимпиадный справочник</title>
-{% endblock %}
-
-{% block navbar_buttons%}
-    <li class="nav-item active">
-        <a class="nav-link" href="#">Главная</a>
-    </li>
-
-{% endblock %}
-    
 {% block content %}
+ <main role="main" class="container" style="margin-top: 50px;">
 
-    
 
-    <main role="main" class="container" style="margin-top: 50px;">
+    <header class="entry-header">
+            <h1 class="entry-title">Льготы</h1>
+        </header><!-- .entry-header -->
 
-        
-        
+
+
+    <div class="Olymp-form">
+        <div>
         <form action="/search/" method="get">
             <div class="form-group">
                 <div class="form-group form-inline">
@@ -33,7 +25,7 @@
 
             <button type="submit" class="btn btn-dark" value="Search">Узнать льготы</button>
         </form>
-        
+
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
 
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
@@ -43,7 +35,6 @@
                         <th>Рейтинг</th>
                         <th>ВУЗ</th>
                         <th>Специальность</th>
-                        <th>Проходной балл</th>
                         <th>Льгота</th>
                         <th>Проходной балл</th>
                     </tr>
@@ -60,11 +51,65 @@
                     {% endfor%}
                 </table>
             </div>
-        {% endif %}
-        
-       
 
-    </main>
+        {% endif %}
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class = "Postypashki's article">
+	<div class="entry-content">
+		<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;">Льготы при поступлении в ВУЗ – наш главный стимул писать олимпиадки, поэтому закономерно, что все вопросы, связанные с ними, вызывают крайне живой интерес. Давайте же разберемся и проясним для себя этот вопрос.</span></p>
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"></span></p><div class="su-divider su-divider-style-default" style="margin:10px 0;border-width:1px;border-color:#999999"></div><p></p>
+<div class="wk_sub_header" role="heading"><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"><strong>Вступление</strong></span></div>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">На любой олимпиаде можно получить диплом I степени (победители олимпиады), II степени или III степени (призеры олимпиады).&nbsp;Каждая олимпиада имеет определённый уровень: первый, второй или третий. Уровни олимпиад определяются в начале учебного года приказом Министерства Образования и напрямую не связаны со сложностью заданий олимпиады (нередко можно столкнуться с тем, что олимпиада 3-го уровня является более сложной, чем олимпиада первого уровня). Посмотреть уровень конкретной олимпиады вы можете в разделе <a href="http://postypashki.ru/%D0%BE%D0%BB%D0%B8%D0%BC%D0%BF%D0%B8%D0%B0%D0%B4%D1%8B/">“Олимпиады”</a>. Ранее уровень олимпиады был обратно пропорционален возможным льготам, которые получают её победители и призёры, но с позапрошлого года ВУЗы могут сами выбирать за какие олимпиады давать льготы, а за какие нет. Например, МФТИ (или любой другой ВУЗ) может предоставить льготы для призеров и победителей олимпиады “Ломоносов” по математике, но не предоставить льготы призерам и победителям олимпиады “Высшая проба” по математике, хотя обе эти олимпиады имеют&nbsp;I уровень. Поскольку ситуация новая, то оценить какие олимпиады будет принимать конкретный ВУЗ, а какие не будет – дело сложное, но одно известно точно: свою собственную олимпиаду ВУЗ точно учитывает. Для прогнозов советуем ориентироваться на льготы прошлых лет. Льготы за 2017 смотрите&nbsp;<a class="wk_ext_link" href="https://vk.com/away.php?to=http%3A%2F%2Frsr-olymp.ru%2Fbenefits" target="_blank" rel="noopener" data-external-url="http://rsr-olymp.ru/benefits">тут</a>.</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Для примера давайте разберемся как устанавливаются льготы (щелкните на изображение и рассмотрите его). Возьмем&nbsp;<a class="wk_ext_link" href="https://vk.com/away.php?to=https%3A%2F%2Fba.hse.ru%2Fdata%2F2016%2F06%2F01%2F1130397875%2F%25D0%259C%25D0%25BE%25D1%2581%25D0%25BA%25D0%25B2%25D0%25B0.pdf" target="_blank" rel="noopener" data-external-url="https://ba.hse.ru/data/2016/06/01/1130397875/%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.pdf">список</a>&nbsp;льгот НИУ ВШЭ за 2016 год и посмотрим на факультет математики. Первая строчка говорит нам, что люди, которые в 11 классе получили диплом 1, 2, или 3-ей степени на олимпиаде РСОШ первого уровня по предмету “математика” зачисляются без экзаменов. Вторая строчка говорит нам, что люди с дипломом олимпиады второго уровня 1-ой и 2-ой степени за 11 класс тоже зачисляются без экзаменов, а вот призеры 3-ей степени олимпиад второго уровня получают только 100 баллов. В третьей строке написано, что уже в 10-ом классе при наличии диплома первой степени олимпиады первого уровня вы можете гарантировать себе поступление! В следующих двух строчках аналогично. А вот в последней строке выделен список олимпиад, на которые распространяется льгота.</span></p>
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"><a href="http://postypashki.ru/wp-content/uploads/2017/07/льготы.jpg"><img class="aligncenter wp-image-822 size-full" src="http://postypashki.ru/wp-content/uploads/2017/07/льготы.jpg" alt="" width="1396" height="714" srcset="http://postypashki.ru/wp-content/uploads/2017/07/льготы.jpg 1396w, http://postypashki.ru/wp-content/uploads/2017/07/льготы-300x153.jpg 300w, http://postypashki.ru/wp-content/uploads/2017/07/льготы-768x393.jpg 768w, http://postypashki.ru/wp-content/uploads/2017/07/льготы-1024x524.jpg 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px"></a></span></p>
+<div role="heading"><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;">&nbsp;</span></div>
+<div class="wk_sub_header" role="heading"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><div class="su-divider su-divider-style-default" style="margin:10px 0;border-width:1px;border-color:#999999"></div></span></div>
+<div class="wk_sub_header" role="heading"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><strong>Виды льгот</strong></span></div>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Существует четыре вида льгот, которые дают дипломы олимпиад РСОШ, которые обычно (не всегда) обратно пропорциональны уровню олимпиады и степени вашего диплома:</span></p>
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"></span></p><div class="su-list su-list-style-"><p></p>
+<ul class="listing">
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span class="l" style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Баллы в ИД (индивидуальные достижения);</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span class="l" style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">100 баллов за ЕГЭ по профилю олимпиады;</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span class="l" style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">100 баллов за ДВИ (МГУшная тема);</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"><span class="l">БВИ (Зачисление в ВУЗ без вступительных испытаний);&nbsp;</span></span></li></ul></div>
+
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;">Ну и обо всем по порядку:</span></p>
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"></span></p><div class="su-list su-list-style-"><p></p>
+<ul class="listing">
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span class="l" style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">В списке учета ИД конкретного ВУЗа можно найти сколько он накидывает за диплом той или иной олимпиады. Обычно это 3-5 баллов. Да, немного, но иногда всего 1 балл отделяет человека от поступления, поэтому и эту льготу не нужно недооценивать;</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span class="l" style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Ты приносишь подтвержденный 75 баллами диплом олимпиадки в приемную комиссию и комиссия автоматически докручивает результат ЕГЭ по предмету олимпиады до 100-чки;</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span class="l" style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Аналогично предыдущему пункту, но с дополнительным экзаменом в МГУ;</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"><span class="l">Ты приносишь диплом в приемную комиссию и попадаешь на вершину ранжированного списка поступающих (да, даже выше людей с сотней баллов по всем предметам), а результаты ЕГЭ никого не волнуют. Более того, с данной льготой можно не сдавать все предметы, необходимые для поступления на выбранную специальность (например, для поступления на специальность N требуется ЕГЭ по русскому, информатике и математике. Если же у тебя есть льгота БВИ, то можно вовсе не сдавать информатику). Даже если в ВУЗе N есть установленный порог по информатике, но у тебя есть диплом, который дает льготу БВИ, то &nbsp;все равно можно не сдавать информатику! </span></span></li></ul></div>&nbsp;<div class="su-divider su-divider-style-default" style="margin:10px 0;border-width:1px;border-color:#999999"></div><strong style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Бюрократия</strong>
+
+<div role="heading">
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"></span></p><div class="su-list su-list-style-"><p></p>
+<ul>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Чтобы воспользоваться вышеперечисленными льготами, необходимо подтвердить полученный диплом, т.е. необходимо сдать ЕГЭ по профилю олимпиады на 75+ баллов.</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Чтобы пользоваться льготой БВИ, нужен а) подтвержденный диплом (см. предыдущий пункт); б) аттестат. А для получения аттестата нужно написать ЕГЭ по русскому и математике на проходные баллы.</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">ВУЗ сам может выбирать за какие олимпиады давать льготы, а за какие ничего не давать. Да, прошлый год почти полностью разрушил систему уровней олимпиад (теперь они могут служить только как ПРИМЕРНАЯ мера «топовости» конкретной олимпиады и, как следствие, возможных льгот).</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Каждый диплом можно подать только в несколько ВУЗов. Если же у тебя есть два диплома по разным предметам, которые дают льготу 100 баллов, то ты можешь отнести оба в ВУЗ и получить сразу 100 баллов по двум предметам. Если ты воспользуешься льготой БВИ, то необходимо нести диплом сразу вместе с аттестатом в выбранный ВУЗ (только в один, поэтому нужно все хорошенько обдумать);</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">В ВУЗ можно отнести неограниченное количество дипломов;</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Распечатать свои дипломы можно будет <a href="https://diploma.rsr-olymp.ru/2016/">на сайте РСОШ</a> (там они появятся к концу июня), именно эти копии и нужно нести в ПК ВУЗа. Для получения диплома вовсе не обязательно посещать церемонию награждения.</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Если ты поступаешь в МГУ и твой диплом дает сотку за ДВИ, то нужно написать ЕГЭ на 75+ и все. ДВИ можно не писать вообще.</span></li>
+<li><i class="fa fa-hand-o-right" style="color:#333"></i> <span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Дипломы олимпиад РСОШ действуют 4 года, поэтому олимпиады нужно начинать писать как можно раньше: наберешься опыта, да и некоторые ВУЗы дают хорошие льготы за дипломы олимпиад 10-го класса (а некоторые не дают).</span></li>
+</ul>
+<p><span style="font-size: 10pt; font-family: helvetica, arial, sans-serif;"></span></p></div><p></p>
+</div>
+<div class="wk_sub_header" role="heading"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Как понять за какие олимпиады ВУЗ дает льготы, а за какие не дает?</span></div>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Для этого каждый ВУЗ в этом году должен выпустить список засчитываемых олимпиад до первого октября. Льготы интересующего ВУЗа можно найти на сайте данного ВУЗа в разделах (льготы/олимпиады).</span></p>
+	</div>
+
+</div>
+
+
+
+</main>
     
 
 {% endblock %}
+
