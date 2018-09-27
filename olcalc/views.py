@@ -18,7 +18,7 @@ def test(request):
 
 def search(request):
     subjects = Subject.objects.order_by('title')
-    olymps = Olymp.objects.order_by('title')
+    olymps = list(Olymp.objects.order_by('title'))
     if 'olymp_name' in request.GET and request.GET['olymp_name']:
         olymp_name = request.GET['olymp_name']
         univers = Univer_plus.objects.order_by('rating', 'title').filter(olymps__title=olymp_name)

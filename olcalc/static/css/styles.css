@@ -1,7 +1,6 @@
 body {
-    background: linear-gradient(lightgray, lightgray, white);
-    background-repeat: no-repeat;
     height: 100vh;
+    background: white;
 }
 
 .fa {
@@ -20,7 +19,9 @@ body {
 }
 
 .jumbotron {
-    padding: 0px;
-    margin: 0px;
-    background-color: pink!important;
+    margin-bottom:0;
+}
+
+.navbar {
+    margin-bottom:0;
 }

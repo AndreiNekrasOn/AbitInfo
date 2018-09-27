@@ -8,24 +8,11 @@
     <li class="nav-item active">
         <a class="nav-link" href="#">Главная</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Статьи</a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="#">О нас</a>
-    </li>
 
 {% endblock %}
     
 {% block content %}
-    <div class="jumbotron d-none d-sm-block">
-        <div class="container">
-            <h1 class="display-4">Льготы победителям и призерам олимпиад</h1>
-            <p class="lead">Какие льготы можно получить за олимпиаду? Какие ВУЗы ее принимают? Где БВИ, а где всего-лишь ИД?</p>
-            <p class="lead">Мы поможем найти ответ!</p>
-        </div>
-    </div>
+
     
 
     <main role="main" class="container" style="margin-top: 50px;">
@@ -46,7 +33,7 @@
 
             <button type="submit" class="btn btn-dark" value="Search">Узнать льготы</button>
         </form>
-
+        
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
 
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>

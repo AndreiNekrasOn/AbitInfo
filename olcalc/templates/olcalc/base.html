@@ -7,61 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     {% block title %}
-    {% endblock %}    
-    
+    {% endblock %}
+
     {% load staticfiles %}
     <link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">
-    
-    
-    
-    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" 
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
           crossorigin="anonymous">
     <!--styles for social-media icons-->
-    <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body class="color-block blue-gradient">
+<body>
 
-    <div class="container-fluid">
-        <header>
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <div class="container">
-                    <a class="navbar-brand" href="../">AbitInfo</a>
-                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#header-links">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse" id="header-links">
-                        <ul class="navbar-nav m-auto">
-                            {% block navbar_buttons %}                        
-                            {% endblock %}
-                        </ul>
-                        <form class="form-inline">
-                            <input class="form-control" type="text" placeholder="Поиск" aria-label="Search">
-                        </form>
-                    </div>
+    <header>
+        <div class="jumbotron d-none d-sm-block my-0 py-0">
+            <div class="container my-0">
+                <h1 class="display-4">Льготы победителям и призерам олимпиад</h1>
+                <p class="lead">Какие льготы можно получить за олимпиаду? Какие ВУЗы ее принимают? Где БВИ, а где всего-лишь ИД?</p>
+                <p class="lead">Мы поможем найти ответ!</p>
+            </div>
+        </div>
+
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light my-0 ">
+            <div class="container">
+                <a class="navbar-brand" href="../">AbitInfo</a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#header-links">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="header-links">
+                    <ul class="navbar-nav m-auto">
+                        {% block navbar_buttons %}
+                        {% endblock %}
+                    </ul>
                 </div>
-            </nav>
-        </header>
-        
-        {% block content %}
-        {% endblock %}
-        
-        <footer class="my-5 pt-5 text-muted text-center text-small">
-            {% now "Y" as current_year %}
-            
-            <p class="mb-1">© {{ current_year }} AbitInfo | Все права защищены. Копирование запрещено.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="https://vk.com/andreinekrason" class="fa fa-vk fa-2x"></a></li>
-            </ul>
-        </footer>
-    </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        {% now "Y" as current_year %}
+
+        <p class="mb-1">© {{ current_year }} AbitInfo | Все права защищены. Копирование запрещено.</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://vk.com/andreinekrason" class="fa fa-vk fa-2x"></a></li>
+        </ul>
+    </footer>
+
 
     <!-- Optional JavaScript -->
 
