@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c70e514-b476-49b4-bbb5-7d2edcc0d8cc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/olcalc/templates/olcalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/olcalc/templates/olcalc/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/olcalc/templates/olcalc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/olcalc/templates/olcalc/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,21 +14,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/olcalc/templates/olcalc/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-782">
-              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            <state relative-caret-position="119">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
                 <element signature="n#p#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/olcalc/templates/olcalc/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -43,15 +41,9 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#3;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="e#2967#2973#0" expanded="true" />
-                <element signature="e#3920#3926#0" expanded="true" />
-                <element signature="e#4212#4218#0" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="e#4599#4605#0" expanded="true" />
-                <element signature="e#4937#4943#0" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="e#6486#6492#1" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#span#0;n#div#3;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
@@ -65,7 +57,6 @@
                 <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#div#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#li#3;n#ul#0;n#div#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="e#8084#8090#0" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#8;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#9;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
@@ -76,8 +67,6 @@
                 <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-                <element signature="e#10057#10063#0" expanded="true" />
-                <element signature="e#10133#10139#1" expanded="true" />
                 <element signature="n#style#0;n#div#7;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#strong#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#div#8;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
@@ -108,7 +97,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/olcalc/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="289">
               <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -153,14 +142,14 @@
         <option value="$PROJECT_DIR$/abitinfo/settings.py" />
         <option value="$PROJECT_DIR$/olcalc/static/css/styles.css" />
         <option value="$PROJECT_DIR$/olcalc/views.py" />
-        <option value="$PROJECT_DIR$/olcalc/templates/olcalc/base.html" />
         <option value="$PROJECT_DIR$/olcalc/templates/olcalc/index.html" />
+        <option value="$PROJECT_DIR$/olcalc/templates/olcalc/base.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -172,6 +161,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,7 +221,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -654,22 +643,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/olcalc/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="289">
           <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olcalc/templates/olcalc/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-782">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#p#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,15 +665,9 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#3;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="e#2967#2973#0" expanded="true" />
-            <element signature="e#3920#3926#0" expanded="true" />
-            <element signature="e#4212#4218#0" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#4;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="e#4599#4605#0" expanded="true" />
-            <element signature="e#4937#4943#0" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="e#6486#6492#1" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#span#0;n#div#3;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#4;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
@@ -710,7 +681,6 @@
             <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#div#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#li#3;n#ul#0;n#div#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#5;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="e#8084#8090#0" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#8;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#9;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
@@ -721,8 +691,6 @@
             <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#li#3;n#ul#0;n#div#6;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
-            <element signature="e#10057#10063#0" expanded="true" />
-            <element signature="e#10133#10139#1" expanded="true" />
             <element signature="n#style#0;n#div#7;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#strong#0;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#8;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
@@ -745,6 +713,16 @@
             <element signature="n#style#0;n#span#0;n#p#1;n#div#0;n#div#8;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#9;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#10;n#div#0;n#div#1;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olcalc/templates/olcalc/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="n#p#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
