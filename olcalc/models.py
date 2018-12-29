@@ -3,6 +3,53 @@ from django.db import models
 # Create your models here
 
 
+class QUniversuty(models.Model):
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
+class QFaculty(models.Model):  # fuckulty
+    title = models.CharField(max_length=200)
+    university = models.ForeignKey(QUniversuty, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.title) + ' ' + str(self.university.title)
+
+
+class QSubject(models.Model):
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
+class QOlymp(models.Model):
+    title = models.CharField(max_length=200)
+    subject = models.ManyToManyField(QSubject)
+    level = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return self.title
+
+
+class QPrivilege(models.Model):
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
+class QMapping(models.Model):
+    unifac = models.ForeignKey(QFaculty, on_delete=models.CASCADE)
+    olymp = models.ForeignKey(QOlymp, on_delete=models.CASCADE)
+    privilege = models.ForeignKey(QPrivilege, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.unifac.title) + ' ' + str(self.unifac.university.title) + ' ' + str(self.olymp.title) + ' ' + str(self.privilege.title)
+
+
 class Univer_plus(models.Model):
     title = models.CharField(max_length=200)
     # f_title = models.CharField(max_length=200)
@@ -32,3 +79,20 @@ class Olymp(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class TestFaculty(models.Model):
+    title = models.CharField(max_length=200)
+    olymps = models.ManyToManyField('Olymp', blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class TestUniver(models.Model):
+    title = models.CharField(max_length=200)
+    f_title = models.OneToOneField(TestFaculty, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+#########
