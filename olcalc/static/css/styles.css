@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background: white;
+    /*background: white;*/
 }
 
 .fa {
@@ -21,6 +21,7 @@ body {
 .jumbotron {
     margin-bottom:0;
 }
+
 
 .navbar {
     margin-bottom:0;

@@ -7,7 +7,7 @@ admin.site.register(QUniversuty)
 admin.site.register(QFaculty)
 admin.site.register(QOlymp)
 admin.site.register(QPrivilege)
-admin.site.register(QSubject)
+admin.site.register(QSpeciality)
 
 
 

@@ -18,16 +18,17 @@ class QFaculty(models.Model):  # fuckulty
         return str(self.title) + ' ' + str(self.university.title)
 
 
-class QSubject(models.Model):
+class QSpeciality(models.Model):  # fuckulty
     title = models.CharField(max_length=200)
+    faculty = models.ForeignKey(QFaculty, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return str(self.title) + ' ' + str(self.faculty.title) + ' ' + str(self.faculty.university.title)
 
 
 class QOlymp(models.Model):
     title = models.CharField(max_length=200)
-    subject = models.ManyToManyField(QSubject)
+    subject = models.CharField(max_length=200, default="")
     level = models.PositiveSmallIntegerField()
 
     def __str__(self):
@@ -42,12 +43,13 @@ class QPrivilege(models.Model):
 
 
 class QMapping(models.Model):
-    unifac = models.ForeignKey(QFaculty, on_delete=models.CASCADE)
+    unifac = models.ForeignKey(QSpeciality, on_delete=models.CASCADE)
     olymp = models.ForeignKey(QOlymp, on_delete=models.CASCADE)
     privilege = models.ForeignKey(QPrivilege, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.unifac.title) + ' ' + str(self.unifac.university.title) + ' ' + str(self.olymp.title) + ' ' + str(self.privilege.title)
+        return str(self.unifac.title) + ' ' + str(self.unifac.faculty.title) + ' ' + \
+               str(self.unifac.faculty.university.title) + ' ' + str(self.olymp.title) + ' ' + str(self.privilege.title)
 
 
 class Univer_plus(models.Model):
