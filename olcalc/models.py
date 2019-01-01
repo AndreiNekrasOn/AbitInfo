@@ -28,11 +28,11 @@ class QSpeciality(models.Model):  # fuckulty
 
 class QOlymp(models.Model):
     title = models.CharField(max_length=200)
-    subject = models.CharField(max_length=200, default="")
+    subject = models.CharField(max_length=200)
     level = models.PositiveSmallIntegerField()
 
     def __str__(self):
-        return str(self.title) + ' по предмету' + str(self.subject)
+        return self.title + ' по предмету ' + self.subject
 
 
 class QPrivilege(models.Model):
@@ -48,53 +48,5 @@ class QMapping(models.Model):
     privilege = models.ForeignKey(QPrivilege, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.unifac.title) + ' ' + str(self.unifac.faculty.title) + ' ' + \
-               str(self.unifac.faculty.university.title) + ' ' + str(self.olymp.title) + ' ' + str(self.privilege.title)
-
-
-class Univer_plus(models.Model):
-    title = models.CharField(max_length=200)
-    # f_title = models.CharField(max_length=200)
-    s_title = models.CharField(max_length=200, null=True, )
-    # exams = models.ManyToManyField('Subject')
-    passing_score = models.PositiveSmallIntegerField()
-    olymps = models.ManyToManyField('Olymp', blank=True)
-    rating = models.PositiveSmallIntegerField(default=10000)
-    privilege = models.CharField(max_length=200, default="Нет")
-    # army_cafedra = models.BooleanField()
-
-    def __str__(self):
-        return self.title
-
-
-class Subject(models.Model):
-    title = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.title
-
-
-class Olymp(models.Model):
-    title = models.CharField(max_length=200)
-    subject = models.CharField(max_length=200)
-    level = models.PositiveSmallIntegerField()
-
-    def __str__(self):
-        return self.title
-
-
-class TestFaculty(models.Model):
-    title = models.CharField(max_length=200)
-    olymps = models.ManyToManyField('Olymp', blank=True)
-
-    def __str__(self):
-        return self.title
-
-
-class TestUniver(models.Model):
-    title = models.CharField(max_length=200)
-    f_title = models.OneToOneField(TestFaculty, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
-#########
+        return self.unifac.title + ' ' + self.unifac.faculty.title + ' ' + self.unifac.faculty.university.title + ' ' \
+               + self.olymp.title + ' ' + self.privilege.title
