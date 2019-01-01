@@ -1,3 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Scroll-bar trick, look here for more: https://css-tricks.com/almanac/properties/s/scrollbar/*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 body {
     height: 100vh;
     /*background: white;*/
@@ -19,7 +45,22 @@ body {
 }
 
 .jumbotron {
-    margin-bottom:0;
+    height: 150px;
+    position: relative;
+    background-color: darkgrey;
+}
+
+.jumbotron h2 {
+    position: absolute;
+    padding-top: 20px;
+    width: 30px;
+}
+
+.jumbotron p {
+    position: absolute;
+    padding: 10px;
+    right: 50px;
+    top: 10px;
 }
 
 

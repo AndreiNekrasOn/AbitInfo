@@ -13,6 +13,16 @@ def test(request):
     return render(request, 'olcalc/test.html', {'olymps': olymps})
 
 
+def blog(request):
+    olymps = QOlymp.objects.order_by('title')
+    return render(request, 'olcalc/blog.html', {'olymps': olymps})
+
+
+def project(request):
+    olymps = QOlymp.objects.order_by('title')
+    return render(request, 'olcalc/project.html', {'olymps': olymps})
+
+
 def search(request):
     olymps = list(QOlymp.objects.order_by('title'))
     if 'olymp_name' in request.GET and request.GET['olymp_name']:

@@ -32,7 +32,7 @@ class QOlymp(models.Model):
     level = models.PositiveSmallIntegerField()
 
     def __str__(self):
-        return self.title
+        return str(self.title) + ' по предмету' + str(self.subject)
 
 
 class QPrivilege(models.Model):

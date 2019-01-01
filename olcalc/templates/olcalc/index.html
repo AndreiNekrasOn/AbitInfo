@@ -7,14 +7,14 @@
 {% block content %}
 
     <main role="main" class="container" style="margin-top: 50px;">
-
+        <p class="lead">Выберите олимпиаду и узнайте, в какие ВУЗы она дает льготы.</p>
         <form action="/search/" method="get">
             <div class="form-group">
                 <div class="form-group form-inline">
                     <select class="form-control" id="olymp_name" name="olymp_name" style="width: 300px;">
                        <option  value="" disabled selected>Название олимпиады</option>
                         {% for olymp in olymps %}
-                            <option>{{olymp}}</option>
+                            <option>{{olymp.title}} по предмету {{olymp.subject}}</option>
                         {% endfor %}
                     </select>
                 </div>
