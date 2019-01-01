@@ -4,12 +4,6 @@
     <title>AbitInfo | Олимпиадный справочник</title>
 {% endblock %}
 
-{% block navbar_buttons%}
-    <li class="nav-item active">
-        <a class="nav-link" href="#">Главная</a>
-    </li>
-{% endblock %}
-
 {% block content %}
 
     <main role="main" class="container" style="margin-top: 50px;">
@@ -30,24 +24,21 @@
         </form>
 
         {% if olymp_name.title in olymps|title %} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
-
             <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
             <div class="table-responsive">
                 <table class="table" >
                     <tr class="bg-dark" style="color: aliceblue">
-                        <th>Рейтинг</th>
-                        <th>ВУЗ</th>
+                        <th>Вуз</th>
+                        <th>Факультет</th>
                         <th>Специальность</th>
                         <th>Льгота</th>
-                        <th>Проходной балл</th>
                     </tr>
-                    {% for univer in univers%}
+                    {% for q in qmap%}
                         <tr>
-                            <td>{{univer.rating}}</td>
-                            <td>{{univer.title}}</td>
-                            <td>{{univer.s_title}}</td>
-                            <td>{{univer.privilege}}</td>
-                            <td>{{univer.passing_score}}</td>
+                            <td>{{q.unifac.faculty.university.title}}</td>
+                            <td>{{q.unifac.faculty.title}}</td>
+                            <td>{{q.unifac.title}}</td>
+                            <td>{{q.privilege.title}}</td>
                         </tr>
 
 

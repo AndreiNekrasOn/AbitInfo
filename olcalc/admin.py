@@ -9,5 +9,9 @@ admin.site.register(QOlymp)
 admin.site.register(QPrivilege)
 admin.site.register(QSpeciality)
 
+admin.site.register(Olymp)
+admin.site.register(Univer_plus)
+admin.site.register(Subject)
+
 
 
