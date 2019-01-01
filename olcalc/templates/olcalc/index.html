@@ -31,6 +31,7 @@
                         <th>Вуз</th>
                         <th>Факультет</th>
                         <th>Специальность</th>
+                        <th>Степень диплома</th>
                         <th>Льгота</th>
                     </tr>
                     {% for q in qmap%}
@@ -38,10 +39,9 @@
                             <td>{{q.unifac.faculty.university.title}}</td>
                             <td>{{q.unifac.faculty.title}}</td>
                             <td>{{q.unifac.title}}</td>
+                            <td>{{q.place.title}}</td>
                             <td>{{q.privilege.title}}</td>
                         </tr>
-
-
                     {% endfor%}
                 </table>
             </div>

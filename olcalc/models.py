@@ -42,11 +42,19 @@ class QPrivilege(models.Model):
         return self.title
 
 
+class QPlace(models.Model):
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
 class QMapping(models.Model):
     unifac = models.ForeignKey(QSpeciality, on_delete=models.CASCADE)
     olymp = models.ForeignKey(QOlymp, on_delete=models.CASCADE)
     privilege = models.ForeignKey(QPrivilege, on_delete=models.CASCADE)
+    place = models.ForeignKey(QPlace, on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.unifac.title + ' ' + self.unifac.faculty.title + ' ' + self.unifac.faculty.university.title + ' ' \
-               + self.olymp.title + ' ' + self.privilege.title
+               + self.olymp.title + ' ' + self.privilege.title + ' ' + self.place.title
