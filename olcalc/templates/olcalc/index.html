@@ -31,7 +31,7 @@
         </form>
 
         {% if olymp_name.title in olymps|title%} <!-- Здесь костыль, 'ab ab'.title -> 'Ab Ab' -->
-            <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong></p>
+        <p>Результат показан для олимпиады: <strong>{{ olymp_name }}</strong> по предмету <strong>{{ olymp_subject }}</strong></p>
             <div class="table-responsive">
                 <table class="table" >
                     <tr class="bg-dark" style="color: aliceblue">
@@ -41,9 +41,7 @@
                         <th>Степень диплома</th>
                         <th>Льгота</th>
                     </tr>
-                     p {{olymp_name}} p
                     {% for q in qmap%}
-                    <p>{{q.olymp.title}}</p>
                         <tr>
                             <td>{{q.unifac.faculty.university.title}}</td>
                             <td>{{q.unifac.faculty.title}}</td>
